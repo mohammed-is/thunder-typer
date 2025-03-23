@@ -1,0 +1,38 @@
+{% extends 'turbo_typing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-board">
+
+    <div class="lesson-meta">
+        <h2>{{ lesson.title }}</h2>
+    </div>
+
+    <div id="text-box" class="container box" tabindex="1" autofocus></div>
+    
+    
+    <div class="stats-bar">
+        <div>
+            <span id="wpm">WPM: 0</span>
+            <span id="timer">Time: 0s</span>
+        </div>
+        <pre>
+            <div id="keyboard-visualization"></div>
+        </pre>
+        <div>
+            <span id="accuracy">Accuracy: 100%</span>
+            <button id="restart-btn" class="btn">Restart</button>
+            <button id="next-btn" class="btn" hidden>Next</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+window.lessonContent = "{{ lesson.content|safe|escapejs }}";
+window.lessonId = {{ lesson.id }};
+window.lessonOrder = {{ lesson.order }};
+window.lessonLang = '{{ lesson.language.code }}';
+</script>
+<script src="{% static 'turbo_typing/js/keyboard.js' %}"></script>
+<script src="{% static 'turbo_typing/js/typing.js' %}"></script>
+{% endblock %}

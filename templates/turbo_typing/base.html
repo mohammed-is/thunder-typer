@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Turbo Typing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'turbo_typing/css/style.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'turbo_typing/images/favicon.ico' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'menu' %}">Home</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; 2025 Turbo Typing. All rights reserved.
+    </footer>
+</body>
+</html>

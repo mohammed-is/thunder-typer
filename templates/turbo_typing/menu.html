@@ -1,0 +1,23 @@
+{% extends 'turbo_typing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-board">
+    <form method="get" class="language-form">
+        <label for="language">Choose Language:</label>
+        <select name="language" id="language" onchange="window.location='?language='+this.value;">
+            {% for lang in languages %}
+                <option value="{{ lang.id }}" {% if lang.id == request.GET.language|default:languages.0.id %}selected{% endif %}>{{ lang.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+    <div class="lessons-list">
+        {% for lesson in lessons %}
+            {% if lesson.language.id == request.GET.language|default:languages.0.id %}
+                <form action="{% url 'typing_page' lesson.id %}" method="get">
+                    <button class="btn" type="submit">{{ lesson.order }}. {{ lesson.title }}</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

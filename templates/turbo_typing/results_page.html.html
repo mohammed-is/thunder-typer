@@ -1,0 +1,25 @@
+:\Mohammed\projects\dev-projects\web_projects\turbo_typing\templates\turbo_typing\results_page.html -->
+{% extends 'turbo_typing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-board">
+    <h2>Results: {{ lesson.title }}</h2>
+    {% if progress %}
+        <div class="results-stats">
+            <span>WPM: {{ progress.wpm }}</span>
+            <span>Accuracy: {{ progress.accuracy }}%</span>
+            <span>Time: {{ progress.time_taken }}s</span>
+        </div>
+        <div class="results-actions">
+            {% if next_lesson %}
+                <a id="next-btn" class="btn" href="{% url 'typing_page' next_lesson.id %}">Next Lesson</a>
+            {% endif %}
+            <a id="retry-btn" class="btn" href="{% url 'typing_page' lesson.id %}">Retry</a>
+            <a id="back-btn" class="btn" href="{% url 'menu' %}">Back to Menu</a>
+        </div>
+    {% else %}
+        <p>No results yet.</p>
+        <a id="back-btn" class="btn" href="{% url 'menu' %}">Back to Menu</a>
+    {% endif %}
+</div>
+{% endblock %}
