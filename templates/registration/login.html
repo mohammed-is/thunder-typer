@@ -1,0 +1,22 @@
+{% extends 'turbo_typing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="main-board auth-container">
+    <h2>Login</h2>
+    {% if error %}
+        <p class="error-msg">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" class="field" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" class ="field" required>
+        <button class="btn" type="submit">Login</button>
+    </form>
+    <div style="text-align:center;">
+        <a href="{% url 'password_reset' %}" style="color:cyan;">Forgot password?</a> |
+        <a href="{% url 'register' %}" style="color:cyan;">Register</a>
+    </div>
+</div>
+{% endblock %}

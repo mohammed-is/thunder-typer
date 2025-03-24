@@ -25,7 +25,10 @@ footer {
 }
 
 main {
+    display: flex;
     flex: 1;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .navbar {
@@ -46,7 +49,6 @@ main {
 .main-board {
     width: 75vw;
     height: 75vh;
-    margin: auto;
     background: #1e242a;
     border: solid gray;
     border-radius: 14px;
@@ -344,4 +346,28 @@ main {
 
 #text-box:focus {
     border-color: cyan;
+}
+
+.auth-container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+    padding: 0.7em;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #23272b;
+    color: #e0e0e0;
 }

@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.http import JsonResponse
 from .models import Language, Lesson, UserProgress
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.shortcuts import redirect
 
 def menu(request):
     languages = Language.objects.all()
@@ -52,3 +55,20 @@ def submit_typing(request):
         )
         return JsonResponse({'success': True, 'redirect': reverse('results_page', args=[lesson.id])})
     return JsonResponse({'success': False})
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 != password2:
+            return render(request, 'registration/register.html', {'error': 'Passwords do not match'})
+        if User.objects.filter(username=username).exists():
+            return render(request, 'registration/register.html', {'error': 'Username already exists'})
+        if User.objects.filter(email=email).exists():
+            return render(request, 'registration/register.html', {'error': 'Email already in use'})
+        user = User.objects.create_user(username=username, email=email, password=password1)
+        login(request, user)
+        return redirect('menu')
+    return render(request, 'registration/register.html')

@@ -25,4 +25,6 @@ urlpatterns = [
     path('', include('turbo_typing.urls')),
     path('turbo_typing/', include('turbo_typing.urls')),
     path("__debug__/", include(debug_toolbar.urls)),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', views.register, name='register'),
 ]
