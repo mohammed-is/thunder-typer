@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import JsonResponse
 from .models import Language, Lesson, UserProgress
@@ -19,12 +20,14 @@ def menu(request):
         'request': request,
     })
 
+@login_required
 def typing_page(request, lesson_id):
     lesson = get_object_or_404(Lesson, id=lesson_id)
     return render(request, 'turbo_typing/typing_page.html', {
         'lesson': lesson,
     })
 
+@login_required
 def results_page(request, lesson_id):
     lesson = get_object_or_404(Lesson, id=lesson_id)
     progress = UserProgress.objects.filter(user=request.user, lesson=lesson).order_by('-created_at').first()
@@ -35,6 +38,7 @@ def results_page(request, lesson_id):
         'next_lesson': next_lesson,
     })
 
+@login_required
 def submit_typing(request):
     if request.method == 'POST':
         lesson_id = request.POST.get('lesson_id')
