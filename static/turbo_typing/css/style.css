@@ -17,7 +17,7 @@ header {
 footer {
     display: flex;
     justify-content: center;
-    font-size: 10px;
+    font-size: 11px;
     background: darkcyan;
     padding: 5px;
     width: fit-content;
@@ -32,7 +32,7 @@ main {
 }
 
 .navbar {
-    background: darkcyan;
+    background: #0aa;
     color: #fff;
     padding: 0.5em;
     display: flex;
@@ -44,6 +44,7 @@ main {
     color: #fff;
     margin-right: 1em;
     text-decoration: none;
+    font-size: 25px;
 }
 
 .main-board {
@@ -55,9 +56,13 @@ main {
     box-shadow: 15px 16px 15px 12px rgb(0 0 0 / 70%);
     padding: 0.5em 1em;
     color: #e0e0e0;
-    margin-top: 1.5em;
     display: flex;
     flex-direction: column;
+}
+
+.main-board.menu {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .stats-bar pre {
@@ -103,7 +108,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 0.7em;
-    margin-bottom: 2em;
+    padding: 1rem;
 }
 
 .language-form label {
@@ -224,16 +229,15 @@ main {
     background: #444;
     border-radius: 4px;
     padding: 0.1vw;
-    font-size: 10px;
+    font-size: 13px;
     min-width: 1.8em;
     text-align: center;
     transition: background 0.15s, color 0.15s;
 }
 
 .keyboard-key.active {
-    background: white;
+    background: cyan;
     color: #2d3e50;
-    border-color: cyan;
 }
 
 .keyboard-key.finger {
@@ -295,23 +299,25 @@ main {
 
 .lessons-list {
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
-    justify-content: center;
-    margin-top: 1.5em;
+    flex-wrap: wrap;
+    height: -webkit-fill-available;
+    align-content: flex-start;
+    padding: 1rem;
 }
 
 .btn {
     background: darkcyan;
     color: #fff;
     border: none;
-    padding: 0.9em 1.5em;
+    padding: 2rem;
     border-radius: 7px;
     font-size: 1.1em;
     font-weight: 500;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+     /* 4 buttons per row, auto scale */
 }
 
 .btn:hover {
@@ -332,7 +338,7 @@ main {
 #text-box {
     background: #181c1f;
     color: #fff;
-    border: 2px solid;
+    border: 2px solid gray;
     border-radius: 8px;
     min-height: 120px;
     max-height: 220px;
@@ -360,8 +366,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    flex: 1;
     justify-content: flex-end;
+    flex: 1 1 calc(25% - 1rem);
 }
 
 input[type="email"], input[type="password"], input[type="text"] {
