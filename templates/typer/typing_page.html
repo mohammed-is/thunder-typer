@@ -1,4 +1,4 @@
-{% extends 'turbo_typing/base.html' %}
+{% extends 'typer/base.html' %}
 {% load static %}
 {% block content %}
 <div class="main-board">
@@ -33,6 +33,6 @@ window.lessonId = {{ lesson.id }};
 window.lessonOrder = {{ lesson.order }};
 window.lessonLang = '{{ lesson.language.code }}';
 </script>
-<script src="{% static 'turbo_typing/js/keyboard.js' %}"></script>
-<script src="{% static 'turbo_typing/js/typing.js' %}"></script>
+<script src="{% static 'typer/js/keyboard.js' %}"></script>
+<script src="{% static 'typer/js/typing.js' %}"></script>
 {% endblock %}
