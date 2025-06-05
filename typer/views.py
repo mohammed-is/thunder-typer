@@ -14,7 +14,7 @@ def menu(request):
         lessons = Lesson.objects.filter(language_id=selected_lang_id).order_by('order')
     else:
         lessons = Lesson.objects.filter(language=languages.first()).order_by('order') if languages else []
-    return render(request, 'turbo_typing/menu.html', {
+    return render(request, 'typer/menu.html', {
         'languages': languages,
         'lessons': lessons,
         'request': request,
@@ -23,7 +23,7 @@ def menu(request):
 @login_required
 def typing_page(request, lesson_id):
     lesson = get_object_or_404(Lesson, id=lesson_id)
-    return render(request, 'turbo_typing/typing_page.html', {
+    return render(request, 'typer/typing_page.html', {
         'lesson': lesson,
     })
 
@@ -32,7 +32,7 @@ def results_page(request, lesson_id):
     lesson = get_object_or_404(Lesson, id=lesson_id)
     progress = UserProgress.objects.filter(user=request.user, lesson=lesson).order_by('-created_at').first()
     next_lesson = Lesson.objects.filter(language=lesson.language, order__gt=lesson.order).order_by('order').first()
-    return render(request, 'turbo_typing/results_page.html', {
+    return render(request, 'typer/results_page.html', {
         'lesson': lesson,
         'progress': progress,
         'next_lesson': next_lesson,
