@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="static/turbo_typing/images/favicon.ico" style="width:25%;margin:1.5rem;">
+   <img src="static/typer/images/favicon.ico" style="width:25%;margin:1.5rem;">
 </div>
 
 ![Version](https://img.shields.io/badge/app%20version-1.4.2-blue)
@@ -7,9 +7,9 @@
 [![Python](https://img.shields.io/badge/Python-3.12%2B-yello.svg)](https://www.python.org/downloads/)
 [![Django](https://img.shields.io/pypi/v/django.svg?label=Django&color=blue)](https://pypi.org/project/Flask/)
 
-# Turbo Typing
+# Thunder Typer
 
-Turbo Typing is a web-based typing practice application built with Django. It allows users to improve their typing speed and accuracy through interactive lessons, real-time statistics, and progress tracking.
+Thunder Typer is a web-based typing practice application built with Django. It allows users to improve their typing speed and accuracy through interactive lessons, real-time statistics, and progress tracking.
 
 ## Features
 - User registration and authentication
@@ -28,7 +28,7 @@ Turbo Typing is a web-based typing practice application built with Django. It al
 1. Clone the repository:
    ```sh
    git clone <repo-url>
-   cd turbo_typing
+   cd typer
    ```
 2. Install dependencies:
    ```sh
