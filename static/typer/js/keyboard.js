@@ -1,4 +1,4 @@
-// filepath: d:\Mohammed\projects\dev-projects\web_projects\turbo_typing\static\turbo_typing\js\keyboard.js
+// filepath: d:\Mohammed\projects\dev-projects\web_projects\typer\static\typer\js\keyboard.js
 document.addEventListener('DOMContentLoaded', function() {
     const keyboardDiv = document.getElementById('keyboard-visualization');
     if (!keyboardDiv) return;
