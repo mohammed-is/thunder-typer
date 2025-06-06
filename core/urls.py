@@ -18,12 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import debug_toolbar
-from turbo_typing import views
+from typer import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('turbo_typing.urls')),
-    path('turbo_typing/', include('turbo_typing.urls')),
+    path('', include('typer.urls')),
+    path('typer/', include('typer.urls')),
     path("__debug__/", include(debug_toolbar.urls)),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', views.register, name='register'),
