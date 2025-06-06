@@ -108,7 +108,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 0.7em;
-    padding: 1rem;
+    flex-direction: row;
 }
 
 .language-form label {
