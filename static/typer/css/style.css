@@ -42,9 +42,16 @@ main {
 
 .navbar a {
     color: #fff;
-    margin-right: 1em;
     text-decoration: none;
     font-size: 25px;
+    align-content: center;
+    display: flex;
+}
+
+nav img
+ {
+    height: 35px;
+    margin: 0 5px;
 }
 
 .main-board {
