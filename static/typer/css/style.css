@@ -18,7 +18,7 @@ footer {
     display: flex;
     justify-content: center;
     font-size: 12px;
-    background: darkcyan;
+    background: #0aa;
     padding: 5px;
     width: fit-content;
     border-radius: 20px 0;
