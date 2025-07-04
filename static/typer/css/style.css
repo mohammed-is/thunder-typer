@@ -27,8 +27,13 @@ footer {
 main {
     display: flex;
     flex: 1;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100vw;
+    align-items: center;
+}
+
+.thunder {
+    height: 30vh;
 }
 
 .navbar {
