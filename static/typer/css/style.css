@@ -316,6 +316,7 @@ nav img
     height: -webkit-fill-available;
     align-content: flex-start;
     padding: 1rem;
+    overflow: auto;
 }
 
 .btn {
