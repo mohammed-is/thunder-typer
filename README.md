@@ -31,7 +31,7 @@ Thunder Typer is a web-based typing practice application built with Django. It a
 ### Installation
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/m-ismail-x2/thunder-typer.git
    cd typer
    ```
 2. Install dependencies:
