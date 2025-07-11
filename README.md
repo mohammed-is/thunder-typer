@@ -2,7 +2,7 @@
    <img src="static/typer/images/favicon.ico" style="width:25%;margin:1.5rem;">
 </div>
 
-![Version](https://img.shields.io/badge/app%20version-1.4.2-blue)
+![Version](https://img.shields.io/badge/app%20version-2.4.2-blue)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12%2B-yello.svg)](https://www.python.org/downloads/)
 [![Django](https://img.shields.io/pypi/v/django.svg?label=Django&color=blue)](https://pypi.org/project/Flask/)
@@ -10,6 +10,10 @@
 # Thunder Typer
 
 Thunder Typer is a web-based typing practice application built with Django. It allows users to improve their typing speed and accuracy through interactive lessons, real-time statistics, and progress tracking.
+
+   <img src="static/typer/images/typer.png" style="width:50%; min-width: 300px; margin:1rem;">
+   <img src="static/typer/images/menu.png" style="width:50%; min-width: 300px; margin:1rem;">
+
 
 ## Features
 - User registration and authentication
