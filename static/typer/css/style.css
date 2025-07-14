@@ -28,7 +28,7 @@ main {
     display: flex;
     flex: 1;
     justify-content: space-evenly;
-    width: 100vw;
+    width: 100%;
     align-items: center;
 }
 
@@ -61,7 +61,7 @@ nav img
 
 .main-board {
     width: 75vw;
-    height: 75vh;
+    height: 70vh;
     background: #1e242a;
     border: solid gray;
     border-radius: 14px;
@@ -70,6 +70,7 @@ nav img
     color: #e0e0e0;
     display: flex;
     flex-direction: column;
+    margin: 10px;
 }
 
 .main-board.menu {
